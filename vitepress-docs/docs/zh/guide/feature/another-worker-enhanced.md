@@ -49,7 +49,7 @@ export default class extends WorkerEntrypoint<Env> {
 
     // 暴露rpc接口，处理来自其他worker的邮件请求
     async rpcEmail(requestBody: string): Promise<void> {
-        console.log(`接受其他worker（临时邮件服务cloudflare_temp_email）的请求，request body: ${requestBody}`);
+        console.log(`接受其他worker（临时邮件服务 temp_email）的请求，request body: ${requestBody}`);
         // requestBody json 格式，由临时邮件服务发送，格式如下
         // type RPCEmailMessage = {
         //     from: string | undefined | null,

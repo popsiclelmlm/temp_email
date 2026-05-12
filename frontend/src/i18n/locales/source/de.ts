@@ -115,7 +115,7 @@ export const deMessages = {
   "views.admin.Account.clearInbox": "Posteingang leeren",
   "views.index.AccountSettings.clearSentItems": "Gesendete Elemente leeren",
   "views.admin.Account.clearSentItems": "Gesendete Elemente leeren",
-  "views.Header.title": "Cloudflare Temporäre E-Mail",
+  "views.Header.title": "temp_email",
   "views.Header.seoTitle": "Temporäre E-Mail - Wegwerf-E-Mail für mehr Privatsphäre",
   "views.Header.metaDescription": "Erstelle eine temporäre Wegwerf-E-Mail-Adresse, empfange Bestätigungscodes, schütze dein echtes Postfach, reduziere Spam und wahre deine Privatsphäre ohne Registrierung.",
   "views.admin.DatabaseManager.code_db_version": "Vom Code benötigte DB-Version",

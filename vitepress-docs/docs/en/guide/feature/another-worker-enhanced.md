@@ -49,7 +49,7 @@ export default class extends WorkerEntrypoint<Env> {
 
     // Expose RPC interface to handle email requests from other workers
     async rpcEmail(requestBody: string): Promise<void> {
-        console.log(`Received request from another worker (temporary email service cloudflare_temp_email), request body: ${requestBody}`);
+        console.log(`Received request from another worker (temporary email service temp_email), request body: ${requestBody}`);
         // requestBody is in JSON format, sent by temporary email service, format as follows
         // type RPCEmailMessage = {
         //     from: string | undefined | null,

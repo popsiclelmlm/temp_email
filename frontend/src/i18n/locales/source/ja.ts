@@ -115,7 +115,7 @@ export const jaMessages = {
   "views.admin.Account.clearInbox": "受信箱を削除",
   "views.index.AccountSettings.clearSentItems": "送信済みを削除",
   "views.admin.Account.clearSentItems": "送信済みを削除",
-  "views.Header.title": "Cloudflare 一時メール",
+  "views.Header.title": "temp_email",
   "views.Header.seoTitle": "一時メール - プライバシーを守る使い捨てメール",
   "views.Header.metaDescription": "一時的な使い捨てメールアドレスを作成し、認証コードを受信して本当の受信箱を隠し、迷惑メールを減らし、登録なしでプライバシーを守ります。",
   "views.admin.DatabaseManager.code_db_version": "コードが必要とするDBバージョン",

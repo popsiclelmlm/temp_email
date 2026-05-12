@@ -1,6 +1,6 @@
 # E2E Tests
 
-End-to-end tests for Cloudflare Temp Email using [Playwright](https://playwright.dev/) and [Mailpit](https://mailpit.axllent.org/), fully containerized with Docker Compose.
+End-to-end tests for temp_email using [Playwright](https://playwright.dev/) and [Mailpit](https://mailpit.axllent.org/), fully containerized with Docker Compose.
 
 ## Prerequisites
 

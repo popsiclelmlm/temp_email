@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-file MD033 MD045 -->
-# Cloudflare Temp Email - Free Temporary Email Service
+# temp_email - Free Temporary Email Service
 
 <p align="center">
   <a href="https://temp-mail-docs.awsl.uk" target="_blank">
@@ -84,7 +84,7 @@ Try it now → [https://mail.awsl.uk/](https://mail.awsl.uk/)
 <details open>
 <summary>Table of Contents (Click to expand/collapse)</summary>
 
-- [Cloudflare Temp Email - Free Temporary Email Service](#cloudflare-temp-email---free-temporary-email-service)
+- [temp_email - Free Temporary Email Service](#temp_email---free-temporary-email-service)
   - [Deployment Documentation - Quick Start](#deployment-documentation---quick-start)
   - [Changelog](#changelog)
   - [Live Demo](#live-demo)

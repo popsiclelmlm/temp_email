@@ -115,7 +115,7 @@ export const esMessages = {
   "views.admin.Account.clearInbox": "Vaciar bandeja de entrada",
   "views.index.AccountSettings.clearSentItems": "Vaciar enviados",
   "views.admin.Account.clearSentItems": "Vaciar enviados",
-  "views.Header.title": "Cloudflare Correo Temporal",
+  "views.Header.title": "temp_email",
   "views.Header.seoTitle": "Correo temporal - Email desechable para privacidad",
   "views.Header.metaDescription": "Crea una dirección de correo temporal desechable para recibir códigos de verificación, ocultar tu buzón real, reducir spam y proteger tu privacidad sin registrarte.",
   "views.admin.DatabaseManager.code_db_version": "Versión de BD requerida por el código",

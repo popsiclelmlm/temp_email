@@ -24,6 +24,8 @@
 
 ### Improvements
 
+- refactor: |Project| 将默认项目名精简为 `temp_email`，同步 Worker、Pages、e2e 配置、前端标题与部署文档示例
+
 ## v1.8.0
 
 ### Features

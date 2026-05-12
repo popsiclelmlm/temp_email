@@ -1,4 +1,4 @@
-# cloudflare temp email
+# temp_email
 
 This is a temporary email service that uses Cloudflare Workers to create a temporary email address and view the received email in web browser.
 
@@ -42,7 +42,7 @@ wrangler d1 execute temp-email-db --file=db/schema.sql --remote
 wrangler kv:namespace create DEV
 ```
 
-Use a D1 database name such as `temp-email-db` or `cloudflare-temp-email-prod`.
+Use a D1 database name such as `temp-email-db` or `temp-email-prod`.
 
 ![d1](/readme_assets/d1.png)
 
@@ -61,7 +61,7 @@ pnpm run deploy
 `wrangler.toml`
 
 ```toml
-name = "cloudflare_temp_email"
+name = "temp_email"
 main = "src/worker.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = [ "nodejs_compat" ]

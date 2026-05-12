@@ -115,7 +115,7 @@ export const ptBRMessages = {
   "views.admin.Account.clearInbox": "Limpar caixa de entrada",
   "views.index.AccountSettings.clearSentItems": "Limpar itens enviados",
   "views.admin.Account.clearSentItems": "Limpar itens enviados",
-  "views.Header.title": "Cloudflare E-mail Temporário",
+  "views.Header.title": "temp_email",
   "views.Header.seoTitle": "E-mail temporário - E-mail descartável para privacidade",
   "views.Header.metaDescription": "Crie um endereço de e-mail temporário e descartável para receber códigos de verificação, ocultar sua caixa real, reduzir spam e proteger sua privacidade sem cadastro.",
   "views.admin.DatabaseManager.code_db_version": "Versão do banco exigida pelo código",

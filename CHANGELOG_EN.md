@@ -24,6 +24,8 @@
 
 ### Improvements
 
+- refactor: |Project| Simplify the default project name to `temp_email` across Worker, Pages, e2e configuration, frontend title, and deployment docs examples
+
 ## v1.8.0
 
 ### Features
