@@ -1,0 +1,54 @@
+name: Paid deployment / custom support
+description: Request paid help for deployment, customization, or production debugging
+title: "[Paid Support]"
+labels: ["paid support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you want paid help with Cloudflare deployment, custom domains, SMTP/IMAP, Telegram Bot, admin/auth changes, or private feature development.
+
+        You can also email: no_7seven@163.com
+  - type: input
+    id: contact
+    attributes:
+      label: Contact
+      description: Email, Telegram, Discord, or another way to reach you.
+      placeholder: name@example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: What do you need?
+      options:
+        - Deploy this project
+        - Fix a production issue
+        - Add or customize a feature
+        - Configure SMTP / IMAP / Telegram Bot
+        - Configure Cloudflare D1 / R2 / Pages / Workers
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Describe your current setup, target deployment, error message, or custom feature request.
+      placeholder: |
+        Current state:
+        Target result:
+        Error logs or screenshots:
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Budget / timeline
+      description: Optional, but it helps scope the work.
+      placeholder: "$20-100, this week"
+  - type: textarea
+    id: private_info
+    attributes:
+      label: Sensitive information
+      description: Do not paste API keys, passwords, private tokens, or Cloudflare secrets here. Share secrets only through a private channel after contact is established.
