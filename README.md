@@ -52,6 +52,14 @@
   <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare Workers" height="32">
 </a>
 
+## 付费部署 / 定制支持
+
+如果你希望快速上线私有临时邮箱服务、配置 Cloudflare Workers / Pages / D1 / R2、接入自定义域名、OAuth、Telegram Bot、SMTP/IMAP 或后台权限策略，可以联系维护者进行小额付费支持。
+
+- 适合范围：部署排错、私有化配置、二次开发、功能集成、代码审查
+- 联系方式：`no_7seven@163.com`
+- 建议说明：目标域名、Cloudflare 账号准备情况、需要开启的功能、预算与期望交付时间
+
 ## 更新日志
 
 查看 [CHANGELOG](CHANGELOG.md) 了解最新更新内容。
