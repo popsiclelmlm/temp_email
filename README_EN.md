@@ -52,6 +52,14 @@
   <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare Workers" height="32">
 </a>
 
+## Paid Deployment / Custom Support
+
+If you want to launch a private temporary email service quickly, configure Cloudflare Workers / Pages / D1 / R2, connect a custom domain, OAuth, Telegram Bot, SMTP/IMAP, or customize admin permissions, small paid support is available from the maintainer.
+
+- Suitable work: deployment troubleshooting, private setup, custom development, integrations, and code review
+- Contact: `no_7seven@163.com`
+- Helpful details: target domain, Cloudflare account readiness, required features, budget, and expected delivery timeline
+
 ## Changelog
 
 See [CHANGELOG](CHANGELOG.md) for the latest updates.
@@ -86,6 +94,7 @@ Try it now → [https://mail.awsl.uk/](https://mail.awsl.uk/)
 
 - [temp_email - Free Temporary Email Service](#temp_email---free-temporary-email-service)
   - [Deployment Documentation - Quick Start](#deployment-documentation---quick-start)
+  - [Paid Deployment / Custom Support](#paid-deployment--custom-support)
   - [Changelog](#changelog)
   - [Live Demo](#live-demo)
   - [Core Features](#core-features)
