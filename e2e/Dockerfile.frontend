@@ -5,10 +5,12 @@ RUN corepack enable && corepack prepare pnpm@10.10.0 --activate
 
 WORKDIR /app/frontend
 
-COPY frontend/package.json frontend/pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile || (echo "WARN: frozen-lockfile failed, falling back to pnpm install" && pnpm install)
-
 COPY frontend/ .
+RUN if [ -f pnpm-lock.yaml ]; then \
+        pnpm install --frozen-lockfile; \
+    else \
+        pnpm install; \
+    fi
 
 # Generate self-signed cert for HTTPS (required for WebAuthn/crypto.subtle)
 RUN openssl req -x509 -newkey rsa:2048 -keyout /tmp/key.pem -out /tmp/cert.pem \
@@ -18,26 +20,37 @@ RUN openssl req -x509 -newkey rsa:2048 -keyout /tmp/key.pem -out /tmp/cert.pem \
 # Configure HTTPS with self-signed cert for secure context (WebAuthn/crypto.subtle).
 # Proxy API paths to the worker to avoid mixed-content (HTTPS->HTTP) blocking.
 RUN mv vite.config.js vite.config.original.js && \
-    echo 'import config from "./vite.config.original.js";\
-import fs from "fs";\
-const workerTarget = process.env.VITE_WORKER_URL || "http://worker:8787";\
-config.server = {\
-  ...config.server,\
-  allowedHosts: true,\
-  https: {\
-    key: fs.readFileSync("/tmp/key.pem"),\
-    cert: fs.readFileSync("/tmp/cert.pem"),\
-  },\
-  proxy: {\
-    "/api": { target: workerTarget, changeOrigin: true },\
-    "/admin": { target: workerTarget, changeOrigin: true },\
-    "/user_api": { target: workerTarget, changeOrigin: true },\
-    "/open_api": { target: workerTarget, changeOrigin: true },\
-    "/external": { target: workerTarget, changeOrigin: true },\
-    "/health_check": { target: workerTarget, changeOrigin: true },\
-  },\
-};\
-export default config;' > vite.config.js
+    printf '%s\n' \
+      'import originalConfig from "./vite.config.original.js";' \
+      'import fs from "fs";' \
+      'const workerTarget = process.env.VITE_WORKER_URL || "http://worker:8787";' \
+      'const proxy = {' \
+      '  "/api": { target: workerTarget, changeOrigin: true },' \
+      '  "/admin": { target: workerTarget, changeOrigin: true },' \
+      '  "/user_api": { target: workerTarget, changeOrigin: true },' \
+      '  "/open_api": { target: workerTarget, changeOrigin: true },' \
+      '  "/external": { target: workerTarget, changeOrigin: true },' \
+      '  "/health_check": { target: workerTarget, changeOrigin: true },' \
+      '};' \
+      'export default async function e2eConfig(env) {' \
+      '  const resolved = typeof originalConfig === "function" ? await originalConfig(env) : originalConfig;' \
+      '  return {' \
+      '    ...resolved,' \
+      '    server: {' \
+      '      ...(resolved.server || {}),' \
+      '      allowedHosts: true,' \
+      '      https: {' \
+      '        key: fs.readFileSync("/tmp/key.pem"),' \
+      '        cert: fs.readFileSync("/tmp/cert.pem"),' \
+      '      },' \
+      '      proxy: {' \
+      '        ...(resolved.server?.proxy || {}),' \
+      '        ...proxy,' \
+      '      },' \
+      '    },' \
+      '  };' \
+      '}' \
+      > vite.config.js
 
 # Empty VITE_API_BASE so frontend uses same-origin (proxied through Vite)
 ENV VITE_API_BASE=
