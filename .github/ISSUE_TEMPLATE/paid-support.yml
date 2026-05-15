@@ -1,20 +1,36 @@
 name: Paid deployment / custom support
 description: Request paid help for deployment, customization, or production debugging
-title: "[Paid Support]"
+title: "[Paid support]: "
 labels: ["paid support"]
 body:
   - type: markdown
     attributes:
       value: |
-        Use this form if you want paid help with Cloudflare deployment, custom domains, SMTP/IMAP, Telegram Bot, admin/auth changes, or private feature development.
+        Use this form for legitimate paid Cloudflare deployment, customization, migration, or troubleshooting work.
 
-        You can also email: no_7seven@163.com
+        Do not include Cloudflare tokens, SMTP credentials, API keys, email contents, private domain records, cookies, or other secrets. If sensitive details are required, share only after a paid scope and safe handoff method are agreed.
   - type: input
     id: contact
     attributes:
       label: Contact
       description: Email, Telegram, Discord, or another way to reach you.
       placeholder: name@example.com
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: Budget
+      description: Your expected budget or range.
+      placeholder: "Example: $20-$100"
+    validations:
+      required: true
+  - type: input
+    id: timeline
+    attributes:
+      label: Timeline
+      description: When do you need this completed?
+      placeholder: "Example: today / this week"
     validations:
       required: true
   - type: dropdown
@@ -34,21 +50,21 @@ body:
     id: details
     attributes:
       label: Details
-      description: Describe your current setup, target deployment, error message, or custom feature request.
+      description: Describe the task, expected result, current deployment state, and any public error messages.
       placeholder: |
         Current state:
         Target result:
         Error logs or screenshots:
     validations:
       required: true
-  - type: input
-    id: budget
-    attributes:
-      label: Budget / timeline
-      description: Optional, but it helps scope the work.
-      placeholder: "$20-100, this week"
   - type: textarea
-    id: private_info
+    id: acceptance
     attributes:
-      label: Sensitive information
-      description: Do not paste API keys, passwords, private tokens, or Cloudflare secrets here. Share secrets only through a private channel after contact is established.
+      label: Acceptance checklist
+      description: How should the work be verified?
+      placeholder: |
+        - Worker deploys successfully
+        - Temporary mailbox can receive mail
+        - Admin page opens with the configured domain
+    validations:
+      required: false
